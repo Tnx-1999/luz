@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reparto de la Luz</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Luz">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#EDF0F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1317" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: una columna en el teléfono; desde 880px, la boleta y los remarcadores a la izquierda, el reparto fijo a la derecha y el historial abajo */
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --sunken:#F5F7F8; --ink:#15212C; --muted:#5B6976; --line:#D5DCE2;
+  --accent:#F2B705; --accent-ink:#1B1500;
+  --ale:#0E827D; --jomy:#6750C6; --ani:#C03A64;
+  --ok:#1B7A47; --ok-bg:#E0F2E7; --warn:#94500A; --warn-bg:#FBEFD8; --err:#B3261E; --err-bg:#FBE3E1;
+  --meter-bg:#15212C; --meter-fg:#F7E7A6;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0D1317; --surface:#161F26; --sunken:#11191F; --ink:#E5EBEF; --muted:#94A3AF; --line:#28343E;
+    --accent:#F5C431; --accent-ink:#1B1500;
+    --ale:#3BC3BC; --jomy:#A391F4; --ani:#F07B9E;
+    --ok:#5ACF8C; --ok-bg:#132B1D; --warn:#F1A753; --warn-bg:#30220E; --err:#F38A80; --err-bg:#391917;
+    --meter-bg:#05090C; --meter-fg:#F5C431;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{ box-sizing:border-box }
+[hidden]{ display:none !important }
+html{ -webkit-text-size-adjust:100% }
+body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased }
+.wrap{ max-width:1100px; margin:0 auto; padding-top:calc(env(safe-area-inset-top, 0px) + 20px); padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 48px); padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); display:grid; gap:16px }
+
+/* Encabezado */
+.top{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; padding-bottom:4px }
+.eyebrow{ margin:0 0 4px; font-size:12px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted) }
+h1{ margin:0; font:800 clamp(30px, 7vw, 44px)/1.02 var(--f-display); letter-spacing:-0.025em; text-wrap:balance }
+.mesbar{ display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+.mes{ display:flex; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:3px }
+.mes button{ width:38px; height:38px; border-radius:50%; border:0; background:transparent; color:var(--ink); font:600 20px/1 var(--f-body); cursor:pointer }
+.mes button:hover{ background:var(--sunken) }
+.mes-label{ min-width:9.5em; text-align:center; font-weight:600; font-size:15px }
+
+/* Paneles */
+.grid{ display:grid; gap:16px; grid-template-columns:minmax(0, 1fr) }
+.col{ display:grid; gap:16px; min-width:0 }
+@media (min-width:880px){
+  .grid{ grid-template-columns:minmax(0, 1.1fr) minmax(0, 1fr); align-items:start }
+  .resultado{ position:sticky; top:16px }
+}
+.panel{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; display:grid; gap:16px; min-width:0 }
+h2{ margin:0; font:700 19px/1.2 var(--f-display); display:flex; align-items:center; gap:10px; text-wrap:balance }
+.paso{ display:inline-grid; place-items:center; width:26px; height:26px; flex:none; border-radius:50%; background:var(--ink); color:var(--surface); font:600 13px/1 var(--f-num) }
+
+/* Campos */
+.fields{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px }
+.field{ min-width:0 }
+.field label{ display:block; font-size:13px; font-weight:500; color:var(--muted); margin-bottom:6px }
+.input{ display:flex; align-items:center; background:var(--sunken); border:1px solid var(--line); border-radius:10px; transition:border-color .15s, box-shadow .15s }
+.input:focus-within{ border-color:var(--ink); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent) }
+.input.invalido{ border-color:var(--err) }
+.input input{ flex:1; min-width:0; width:100%; border:0; background:transparent; color:var(--ink); font:500 16px/1.2 var(--f-num); font-variant-numeric:tabular-nums; padding:11px 10px; outline:none }
+.input .pre{ padding-left:12px; color:var(--muted); font-family:var(--f-num) }
+.input .pre + input{ padding-left:4px }
+.input .suf{ padding-right:12px; color:var(--muted); font:13px var(--f-num) }
+.hint{ margin:6px 0 0; font-size:12.5px; color:var(--muted) }
+.salida{ display:grid; align-content:start; gap:3px; padding:10px 12px; border-radius:10px; border:1px dashed color-mix(in srgb, var(--muted) 50%, transparent); font-size:13px; color:var(--muted) }
+.salida-lbl{ font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase }
+.salida-fila{ display:flex; justify-content:space-between; align-items:baseline; gap:4px 8px; flex-wrap:wrap }
+.salida output{ font:600 13.5px var(--f-num); color:var(--ink); font-variant-numeric:tabular-nums }
+
+/* Casas */
+.casa{ --c:var(--muted); display:grid; gap:12px; padding-top:16px; border-top:1px solid var(--line) }
+.casa:first-of-type{ border-top:0; padding-top:0 }
+.casa-head{ display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+.dot{ display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--c); flex:none }
+.casa-name{ font-weight:600; font-size:16px }
+.casa-num{ font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted) }
+.meter{ margin-left:auto; min-width:96px; text-align:right; font:600 15px/1.3 var(--f-num); font-variant-numeric:tabular-nums; letter-spacing:.06em; background:var(--meter-bg); color:var(--meter-fg); border:1px solid var(--line); padding:4px 10px; border-radius:6px }
+.meter small{ font-size:11px; letter-spacing:0; margin-left:5px; opacity:.75 }
+.casa .hint{ margin:0 }
+.nota{ margin:0; font-size:14px; color:var(--muted) }
+.nota strong{ color:var(--ink); font-family:var(--f-num); font-weight:600; font-variant-numeric:tabular-nums }
+
+/* Resultado */
+.barra{ display:flex; gap:3px; height:14px; border-radius:999px; overflow:hidden; background:var(--sunken) }
+.barra span{ display:block; height:100%; width:0; transition:width .3s ease }
+.barra span:nth-child(1){ background:var(--ale) }
+.barra span:nth-child(2){ background:var(--jomy) }
+.barra span:nth-child(3){ background:var(--ani) }
+.barra-wrap .hint{ margin-top:8px }
+.filas{ display:grid }
+.fila{ --c:var(--muted); display:grid; grid-template-columns:minmax(0, 1fr) auto; align-items:baseline; gap:2px 12px; padding-block:12px; border-top:1px solid var(--line) }
+.fila:first-child{ border-top:0; padding-top:4px }
+.who{ display:flex; align-items:center; gap:8px; font-weight:600; font-size:16px }
+.monto{ font:600 20px/1.2 var(--f-num); font-variant-numeric:tabular-nums; text-align:right }
+.detalle{ grid-column:1 / -1; margin:0; font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums }
+.total{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:2px solid var(--ink) }
+.total > span{ font-weight:600 }
+.total-monto{ font:800 32px/1 var(--f-display); font-variant-numeric:tabular-nums; letter-spacing:-0.01em }
+.cuadre{ margin:0; display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; font-size:13.5px; color:var(--muted) }
+
+.pill{ display:inline-flex; align-items:center; font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:999px; background:var(--sunken); color:var(--muted); border:1px solid var(--line); white-space:nowrap }
+.pill[data-tono="ok"]{ background:var(--ok-bg); color:var(--ok); border-color:transparent }
+.pill[data-tono="warn"]{ background:var(--warn-bg); color:var(--warn); border-color:transparent }
+
+.aviso{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; padding:12px 14px; border-radius:10px; background:var(--err-bg); color:var(--err); font-size:14px }
+.aviso p{ margin:0; flex:1 1 240px }
+.aviso-warn{ background:var(--warn-bg); color:var(--warn) }
+.aviso-info{ background:var(--sunken); color:var(--muted) }
+
+/* Botones */
+.actions{ display:flex; flex-wrap:wrap; gap:10px }
+.btn{ appearance:none; -webkit-appearance:none; font:600 15px/1.2 var(--f-body); padding:12px 18px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; transition:background .15s, transform .1s }
+.btn:hover:not(:disabled){ background:var(--sunken) }
+.btn:active:not(:disabled){ transform:translateY(1px) }
+.btn-primary{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink) }
+.btn-primary:hover:not(:disabled){ background:color-mix(in srgb, var(--accent) 86%, #000) }
+.btn-sm{ padding:7px 12px; font-size:13.5px }
+.btn-ghost{ background:transparent; border-color:transparent; color:var(--muted) }
+.btn-danger{ color:var(--err) }
+.btn:disabled{ opacity:.45; cursor:not-allowed }
+button:focus-visible, .hist-item:focus-visible{ outline:2px solid var(--ink); outline-offset:2px }
+.msg{ margin:0; min-height:1.5em; font-size:14px; color:var(--muted) }
+.msg[data-tono="ok"]{ color:var(--ok) }
+.msg[data-tono="err"]{ color:var(--err) }
+#copiaTexto{ width:100%; font:13px/1.5 var(--f-num); padding:10px; border:1px solid var(--line); border-radius:8px; background:var(--sunken); color:var(--ink); resize:vertical }
+
+/* Historial */
+.hist{ list-style:none; margin:0; padding:0; display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)) }
+.hist-item{ width:100%; display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:6px 12px; align-items:baseline; text-align:left; padding:12px 14px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:inherit; font:inherit; cursor:pointer }
+.hist-item:hover{ background:var(--sunken) }
+.hist-item[aria-current="true"]{ border-color:var(--ink) }
+.hist-mes{ font-weight:600 }
+.hist-total{ font:600 15px var(--f-num); font-variant-numeric:tabular-nums }
+.hist-casas{ grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:2px 14px; font:12.5px var(--f-num); color:var(--muted) }
+.hist-casas span{ display:inline-flex; align-items:center; gap:6px }
+.hist-casas .dot{ width:8px; height:8px }
+#histVacio{ margin:0; font-size:14px; max-width:62ch }
+.respaldo{ display:grid; gap:10px; padding-top:16px; border-top:1px solid var(--line) }
+.respaldo .hint{ margin:0; max-width:62ch }
+
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow">Boleta de luz · 3 casas</p>
+      <h1>Reparto de la luz</h1>
+    </div>
+    <div class="mesbar">
+      <div class="mes" role="group" aria-label="Mes de la boleta">
+        <button type="button" id="mesPrev" aria-label="Mes anterior">‹</button>
+        <span id="mesLabel" class="mes-label" aria-live="polite">—</span>
+        <button type="button" id="mesNext" aria-label="Mes siguiente">›</button>
+      </div>
+      <span id="estado" class="pill">Mes nuevo</span>
+    </div>
+  </header>
+
+  <div id="ejemplo" class="aviso aviso-warn" hidden>
+    <p>Estos son números de ejemplo. Toca Empezar en blanco, o carga tu respaldo abajo en Meses guardados.</p>
+    <button type="button" id="limpiarEjemplo" class="btn btn-sm">Empezar en blanco</button>
+  </div>
+
+  <main class="grid">
+    <div class="col">
+      <section class="panel" aria-labelledby="h-boleta">
+        <h2 id="h-boleta"><span class="paso">1</span>La boleta</h2>
+        <div>
+          <div class="fields">
+            <div class="field">
+              <label for="kwhTotal">kWh consumidos</label>
+              <div class="input"><input id="kwhTotal" inputmode="decimal" autocomplete="off" placeholder="240"><span class="suf">kWh</span></div>
+            </div>
+            <div class="field">
+              <label for="electricidad">Electricidad consumida</label>
+              <div class="input"><span class="pre">$</span><input id="electricidad" inputmode="numeric" autocomplete="off" placeholder="60.824"></div>
+            </div>
+            <div class="field">
+              <label for="totalBoleta">Total a pagar</label>
+              <div class="input"><span class="pre">$</span><input id="totalBoleta" inputmode="numeric" autocomplete="off" placeholder="74.098"></div>
+            </div>
+            <div class="salida" aria-live="polite">
+              <span class="salida-lbl">Sale de la boleta</span>
+              <span class="salida-fila">Precio kWh <output id="precioOut">—</output></span>
+              <span class="salida-fila">Otros gastos <output id="otrosOut">—</output></span>
+              <span class="salida-fila">Por casa <output id="porCasaOut">—</output></span>
+            </div>
+          </div>
+          <p class="hint">Los tres números están en el detalle de la cuenta (página 2): la línea «Electricidad consumida» trae los kWh y su monto. Otros gastos es todo lo demás: total a pagar − electricidad consumida.</p>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="h-rem">
+        <h2 id="h-rem"><span class="paso">2</span>Remarcadores</h2>
+
+        <div class="casa" style="--c:var(--ale)">
+          <div class="casa-head">
+            <span class="dot"></span><span class="casa-name">Alejandra</span><span class="casa-num">Casa 1</span>
+            <output class="meter" id="aleKwh" aria-label="Consumo de Alejandra">—</output>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label for="aleAnt">Lectura anterior</label>
+              <div class="input"><input id="aleAnt" inputmode="decimal" autocomplete="off"><span class="suf">kWh</span></div>
+            </div>
+            <div class="field">
+              <label for="aleAct">Lectura actual</label>
+              <div class="input"><input id="aleAct" inputmode="decimal" autocomplete="off"><span class="suf">kWh</span></div>
+            </div>
+          </div>
+          <p class="hint" id="aleAntHint" hidden></p>
+        </div>
+
+        <div class="casa" style="--c:var(--jomy)">
+          <div class="casa-head">
+            <span class="dot"></span><span class="casa-name">Jomy</span><span class="casa-num">Casa 2</span>
+            <output class="meter" id="jomyKwh" aria-label="Consumo de Jomy">—</output>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label for="jomyAnt">Lectura anterior</label>
+              <div class="input"><input id="jomyAnt" inputmode="decimal" autocomplete="off"><span class="suf">kWh</span></div>
+            </div>
+            <div class="field">
+              <label for="jomyAct">Lectura actual</label>
+              <div class="input"><input id="jomyAct" inputmode="decimal" autocomplete="off"><span class="suf">kWh</span></div>
+            </div>
+          </div>
+          <p class="hint" id="jomyAntHint" hidden></p>
+        </div>
+
+        <div class="casa" style="--c:var(--ani)">
+          <div class="casa-head">
+            <span class="dot"></span><span class="casa-name">Ani</span><span class="casa-num">Casa 3</span>
+            <output class="meter" id="aniKwh" aria-label="Consumo de Ani">—</output>
+          </div>
+          <p class="nota" id="aniNota">Sin remarcador. Le queda lo que sobra de la boleta después de restar a Alejandra y Jomy.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel resultado" aria-labelledby="h-res">
+      <h2 id="h-res"><span class="paso">3</span>Cuánto paga cada casa</h2>
+      <div id="aviso" class="aviso" hidden><p id="avisoTxt"></p></div>
+
+      <div class="barra-wrap">
+        <div class="barra" aria-hidden="true"><span id="barAle"></span><span id="barJomy"></span><span id="barAni"></span></div>
+        <p class="hint" id="barraCap">Reparto de los kWh de la boleta</p>
+      </div>
+
+      <div class="filas">
+        <div class="fila" style="--c:var(--ale)">
+          <div class="who"><span class="dot"></span>Alejandra</div>
+          <output class="monto" id="aleMonto">—</output>
+          <p class="detalle" id="aleDet"></p>
+        </div>
+        <div class="fila" style="--c:var(--jomy)">
+          <div class="who"><span class="dot"></span>Jomy</div>
+          <output class="monto" id="jomyMonto">—</output>
+          <p class="detalle" id="jomyDet"></p>
+        </div>
+        <div class="fila" style="--c:var(--ani)">
+          <div class="who"><span class="dot"></span>Ani</div>
+          <output class="monto" id="aniMonto">—</output>
+          <p class="detalle" id="aniDet"></p>
+        </div>
+      </div>
+
+      <div class="total">
+        <span>Total de las 3 casas</span>
+        <output id="suma" class="total-monto" aria-live="polite">—</output>
+      </div>
+      <p class="cuadre" id="cuadre" hidden><span class="pill" id="cuadrePill"></span><span id="cuadreTxt"></span></p>
+
+      <div class="actions">
+        <button type="button" id="guardar" class="btn btn-primary" disabled>Guardar mes</button>
+        <button type="button" id="copiar" class="btn" disabled>Copiar resumen</button>
+        <button type="button" id="descartar" class="btn btn-ghost" hidden>Volver a lo guardado</button>
+        <button type="button" id="borrar" class="btn btn-ghost btn-danger" hidden>Borrar este mes</button>
+      </div>
+      <p id="msg" class="msg" role="status" aria-live="polite"></p>
+      <textarea id="copiaTexto" readonly hidden rows="9" aria-label="Resumen para copiar"></textarea>
+    </section>
+  </main>
+
+  <section class="panel" aria-labelledby="h-hist">
+    <h2 id="h-hist">Meses guardados</h2>
+    <p id="histVacio" class="hint"></p>
+    <ul id="hist" class="hist"></ul>
+    <div class="respaldo">
+      <p class="hint">Los meses se guardan solo en este teléfono. Descarga un respaldo de vez en cuando y guárdalo en Archivos o mándatelo por correo; si cambias de teléfono, lo cargas aquí.</p>
+      <div class="actions">
+        <button type="button" id="exportar" class="btn btn-sm">Descargar respaldo</button>
+        <button type="button" id="importarBtn" class="btn btn-sm">Cargar respaldo</button>
+        <input type="file" id="importar" accept=".json,application/json" hidden>
+      </div>
+      <p id="msgRespaldo" class="msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const CAMPOS = ['kwhTotal', 'electricidad', 'totalBoleta', 'aleAnt', 'aleAct', 'jomyAnt', 'jomyAct'];
+  const NOMBRES = {
+    kwhTotal: 'los kWh de la boleta', electricidad: 'la electricidad consumida', totalBoleta: 'el total a pagar',
+    aleAnt: 'la lectura anterior de Alejandra', aleAct: 'la lectura actual de Alejandra',
+    jomyAnt: 'la lectura anterior de Jomy', jomyAct: 'la lectura actual de Jomy'
+  };
+  const EJEMPLO = { kwhTotal: '213', electricidad: '53.869', totalBoleta: '66.250', aleAnt: '4.520', aleAct: '4.598', jomyAnt: '3.110', jomyAct: '3.175' };
+  const CLAVE_BORRADOR = 'repartoLuz.borrador';
+  const CLAVE_MESES = 'repartoLuz.meses';
+
+  // ---- Números al estilo chileno: punto para miles, coma para decimales ----
+  const isNum = x => typeof x === 'number' && Number.isFinite(x);
+  const limpiar = s => String(s ?? '').trim().replace(/[\s$]/g, '').replace(/kwh$/i, '');
+  const aNumero = s => /^\d+(\.\d+)?$/.test(s) ? Number(s) : NaN;
+
+  function parsePesos(s) {
+    s = limpiar(s); if (!s) return null;
+    return aNumero(s.replace(/\./g, '').replace(',', '.'));
+  }
+  // Lecturas y kWh: "4.520" es cuatro mil quinientos veinte; "6328.2" o "3325,5" llevan decimal.
+  function parseKwh(s) {
+    s = limpiar(s); if (!s) return null;
+    if (s.includes(',')) s = s.replace(/\./g, '').replace(',', '.');
+    else if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
+    return aNumero(s);
+  }
+  const PARSER = { kwhTotal: parseKwh, electricidad: parsePesos, totalBoleta: parsePesos, aleAnt: parseKwh, aleAct: parseKwh, jomyAnt: parseKwh, jomyAct: parseKwh };
+
+  function miles(n, dec = 0) {
+    const neg = n < 0;
+    let [ent, fr = ''] = Math.abs(n).toFixed(dec).split('.');
+    ent = ent.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    fr = fr.replace(/0+$/, '');
+    return (neg ? '−' : '') + ent + (fr ? ',' + fr : '');
+  }
+  const pesos = n => { const r = Math.round(n); return (r < 0 ? '−' : '') + '$' + miles(Math.abs(r)); };
+  const kwh = n => miles(n, 2);
+  const precio = n => '$' + miles(n, 4);
+  const FORMATO = { kwhTotal: kwh, electricidad: n => miles(n, 2), totalBoleta: n => miles(n, 2), aleAnt: kwh, aleAct: kwh, jomyAnt: kwh, jomyAct: kwh };
+
+  function lista(xs) {
+    return xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' y ' + xs[xs.length - 1];
+  }
+
+  // ---- Meses ----
+  function mesHoy() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); }
+  function moverMes(m, delta) {
+    let [y, mo] = m.split('-').map(Number);
+    mo += delta;
+    while (mo < 1) { mo += 12; y--; }
+    while (mo > 12) { mo -= 12; y++; }
+    return y + '-' + String(mo).padStart(2, '0');
+  }
+  function nombreMes(m) {
+    const [y, mo] = m.split('-').map(Number);
+    const t = new Date(y, mo - 1, 1).toLocaleDateString('es-CL', { month: 'long' });
+    return t.charAt(0).toUpperCase() + t.slice(1) + ' ' + y;
+  }
+
+  // ---- Estado ----
+  let guardados = new Map();   // "2026-10" -> mes guardado
+  let almacenOk = true;
+  let mesActual = mesHoy();
+  let modo = 'nuevo';          // ejemplo | guardado | sinGuardar | nuevo
+  let esEjemplo = false;
+  let tocado = false;          // el usuario editó desde la última carga
+  let ultimo = { v: {}, r: { casas: null } };
+  let tBorrador;
+
+  const leer = () => Object.fromEntries(CAMPOS.map(id => [id, $(id).value]));
+  const llenar = o => CAMPOS.forEach(id => { $(id).value = o[id] ?? ''; });
+  const parsear = t => Object.fromEntries(CAMPOS.map(id => [id, PARSER[id](t[id])]));
+
+  // ---- El cálculo ----
+  // Precio del kWh = electricidad consumida ÷ kWh. Otros gastos = total − electricidad, dividido en 3.
+  function calcular(v) {
+    const r = {
+      malos: CAMPOS.filter(id => Number.isNaN(v[id])),
+      faltan: CAMPOS.filter(id => v[id] === null),
+      errores: [], casas: null
+    };
+    r.precio = isNum(v.electricidad) && isNum(v.kwhTotal) && v.kwhTotal > 0 ? v.electricidad / v.kwhTotal : null;
+    r.otros = isNum(v.electricidad) && isNum(v.totalBoleta) ? v.totalBoleta - v.electricidad : null;
+    r.ale = isNum(v.aleAnt) && isNum(v.aleAct) ? v.aleAct - v.aleAnt : null;
+    r.jomy = isNum(v.jomyAnt) && isNum(v.jomyAct) ? v.jomyAct - v.jomyAnt : null;
+    r.ani = isNum(v.kwhTotal) && r.ale !== null && r.jomy !== null ? v.kwhTotal - r.ale - r.jomy : null;
+    if (isNum(v.kwhTotal) && v.kwhTotal <= 0) r.errores.push('Los kWh de la boleta tienen que ser más que 0.');
+    if (r.otros !== null && r.otros < 0) r.errores.push('La electricidad consumida no puede ser más que el total a pagar.');
+    if (r.ale !== null && r.ale < 0) r.errores.push('La lectura actual de Alejandra es menor que la anterior.');
+    if (r.jomy !== null && r.jomy < 0) r.errores.push('La lectura actual de Jomy es menor que la anterior.');
+    if (r.ani !== null && r.ani < 0 && r.ale >= 0 && r.jomy >= 0) {
+      r.errores.push(`Alejandra y Jomy suman ${kwh(r.ale + r.jomy)} kWh, más que los ${kwh(v.kwhTotal)} kWh de la boleta. Revisa las lecturas.`);
+    }
+    if (r.malos.length || r.faltan.length || r.errores.length) return r;
+
+    const otrosCasa = r.otros / 3;
+    const casa = k => {
+      const energia = r[k] * r.precio;
+      return { kwh: r[k], energia, otros: otrosCasa, monto: Math.round(energia + otrosCasa) };
+    };
+    r.casas = { alejandra: casa('ale'), jomy: casa('jomy'), ani: casa('ani') };
+    r.suma = r.casas.alejandra.monto + r.casas.jomy.monto + r.casas.ani.monto;
+    return r;
+  }
+
+  // ---- Pintar ----
+  function setMeter(id, n) {
+    $(id).innerHTML = n === null ? '—' : kwh(n) + '<small>kWh</small>';
+  }
+
+  function render() {
+    const v = parsear(leer());
+    const r = calcular(v);
+    ultimo = { v, r };
+
+    CAMPOS.forEach(id => $(id).closest('.input').classList.toggle('invalido', Number.isNaN(v[id])));
+    $('precioOut').textContent = r.precio !== null ? precio(r.precio) : '—';
+    const otrosOk = r.otros !== null && r.otros >= 0;
+    $('otrosOut').textContent = otrosOk ? pesos(r.otros) : '—';
+    $('porCasaOut').textContent = otrosOk ? pesos(r.otros / 3) : '—';
+
+    setMeter('aleKwh', r.ale);
+    setMeter('jomyKwh', r.jomy);
+    setMeter('aniKwh', r.ani);
+
+    const nota = $('aniNota');
+    if (r.ani !== null) {
+      nota.innerHTML = 'Sin remarcador. Le queda lo que sobra de la boleta: <strong></strong>';
+      nota.querySelector('strong').textContent = `${kwh(v.kwhTotal)} − ${kwh(r.ale)} − ${kwh(r.jomy)} = ${kwh(r.ani)} kWh`;
+    } else {
+      nota.textContent = 'Sin remarcador. Le queda lo que sobra de la boleta después de restar a Alejandra y Jomy.';
+    }
+
+    // Avisos
+    const aviso = $('aviso');
+    const errores = [];
+    if (r.malos.length) errores.push('Revisa ' + lista(r.malos.map(id => NOMBRES[id])) + ': no se entiende como número.');
+    errores.push(...r.errores);
+    if (errores.length) {
+      aviso.className = 'aviso';
+      $('avisoTxt').textContent = errores.join(' ');
+      aviso.hidden = false;
+    } else if (r.faltan.length) {
+      aviso.className = 'aviso aviso-info';
+      $('avisoTxt').textContent = (r.faltan.length > 1 ? 'Faltan ' : 'Falta ') + lista(r.faltan.map(id => NOMBRES[id])) + '.';
+      aviso.hidden = false;
+    } else {
+      aviso.hidden = true;
+    }
+
+    // Filas
+    const filas = [['ale', 'alejandra', 'barAle'], ['jomy', 'jomy', 'barJomy'], ['ani', 'ani', 'barAni']];
+    for (const [p, k, bar] of filas) {
+      const c = r.casas && r.casas[k];
+      $(p + 'Monto').textContent = c ? pesos(c.monto) : '—';
+      $(p + 'Det').textContent = c ? `${kwh(c.kwh)} kWh × ${precio(r.precio)} = ${pesos(c.energia)}, más ${pesos(c.otros)} de otros gastos` : '';
+      $(bar).style.width = c && v.kwhTotal > 0 ? (c.kwh / v.kwhTotal * 100) + '%' : '0';
+    }
+    $('barraCap').textContent = r.casas ? `Reparto de los ${kwh(v.kwhTotal)} kWh de la boleta` : 'Reparto de los kWh de la boleta';
+    $('suma').textContent = r.casas ? pesos(r.suma) : '—';
+
+    // ¿Cuadra con la boleta?
+    const cuadre = $('cuadre'), pill = $('cuadrePill'), txt = $('cuadreTxt');
+    if (!r.casas) {
+      cuadre.hidden = true;
+    } else {
+      const d = r.suma - v.totalBoleta;
+      if (Math.abs(d) <= 3) {
+        pill.dataset.tono = 'ok'; pill.textContent = 'Cuadra con la boleta';
+        txt.textContent = d === 0 ? '' : `Diferencia de ${pesos(Math.abs(d))} por redondeo.`;
+      } else {
+        pill.dataset.tono = 'warn'; pill.textContent = 'No cuadra';
+        txt.textContent = `La suma da ${pesos(Math.abs(d))} ${d > 0 ? 'más' : 'menos'} que la boleta (${pesos(v.totalBoleta)}).`;
+      }
+      cuadre.hidden = false;
+    }
+
+    renderEstado();
+  }
+
+  function renderEstado() {
+    $('mesLabel').textContent = nombreMes(mesActual);
+    const estados = { ejemplo: ['Ejemplo', 'warn'], guardado: ['Guardado', 'ok'], sinGuardar: ['Sin guardar', 'warn'], nuevo: ['Mes nuevo', ''] };
+    const [txt, tono] = estados[modo];
+    $('estado').textContent = txt;
+    $('estado').dataset.tono = tono;
+    $('ejemplo').hidden = !esEjemplo;
+
+    const hayGuardado = guardados.has(mesActual);
+    $('guardar').textContent = hayGuardado ? 'Actualizar mes' : 'Guardar mes';
+    $('guardar').disabled = !almacenOk || !ultimo.r.casas;
+    $('copiar').disabled = !ultimo.r.casas;
+    $('descartar').hidden = !(modo === 'sinGuardar' && hayGuardado);
+    $('borrar').hidden = !hayGuardado;
+    $('exportar').disabled = !guardados.size;
+  }
+
+  function msg(texto, tono = '') {
+    $('msg').textContent = texto;
+    $('msg').dataset.tono = tono;
+  }
+  function msgRespaldo(texto, tono = '') {
+    $('msgRespaldo').textContent = texto;
+    $('msgRespaldo').dataset.tono = tono;
+  }
+
+  // ---- Meses guardados en este teléfono ----
+  function leerMeses() {
+    try {
+      const o = JSON.parse(localStorage.getItem(CLAVE_MESES) || '{}');
+      return new Map(Object.entries(o).filter(([k, d]) => /^\d{4}-\d{2}$/.test(k) && d && typeof d === 'object'));
+    } catch { return new Map(); }
+  }
+  function escribirMeses() {
+    localStorage.setItem(CLAVE_MESES, JSON.stringify(Object.fromEntries(guardados)));
+  }
+
+  // ---- Cargar un mes en el formulario ----
+  function docAForm(d) {
+    const L = (d && d.lecturas) || {}, A = L.alejandra || {}, J = L.jomy || {};
+    const f = (x, dec) => isNum(x) ? miles(x, dec) : '';
+    const elec = isNum(d.electricidad) ? d.electricidad
+      : isNum(d.precioKwh) && isNum(d.kwhTotal) ? Math.round(d.precioKwh * d.kwhTotal) : null;
+    const total = isNum(d.totalBoleta) ? d.totalBoleta
+      : elec !== null && isNum(d.otrosGastos) ? elec + d.otrosGastos : null;
+    return {
+      kwhTotal: f(d.kwhTotal, 2), electricidad: f(elec, 2), totalBoleta: f(total, 2),
+      aleAnt: f(A.anterior, 2), aleAct: f(A.actual, 2), jomyAnt: f(J.anterior, 2), jomyAct: f(J.actual, 2)
+    };
+  }
+
+  function cargarMes(m) {
+    mesActual = m;
+    tocado = false;
+    esEjemplo = false;
+    let anteriorDe = null;
+    const b = leerBorrador();
+    const g = guardados.get(m);
+    if (b && b.mes === m && b.valores) {
+      llenar(b.valores); modo = 'sinGuardar'; esEjemplo = !!b.ejemplo;
+    } else if (g) {
+      llenar(docAForm(g)); modo = 'guardado';
+    } else if (guardados.size === 0 && m === mesHoy()) {
+      llenar(EJEMPLO); modo = 'ejemplo'; esEjemplo = true;
+    } else {
+      const vacio = Object.fromEntries(CAMPOS.map(id => [id, '']));
+      const prev = [...guardados.keys()].filter(k => k < m).sort().pop();
+      if (prev) {
+        const p = docAForm(guardados.get(prev));
+        vacio.aleAnt = p.aleAct; vacio.jomyAnt = p.jomyAct;
+        anteriorDe = prev;
+      }
+      llenar(vacio); modo = 'nuevo';
+    }
+    for (const id of ['aleAntHint', 'jomyAntHint']) {
+      $(id).textContent = anteriorDe ? `La lectura anterior viene de la lectura actual de ${nombreMes(anteriorDe).toLowerCase()}.` : '';
+      $(id).hidden = !anteriorDe;
+    }
+    render();
+    renderHistorial();
+  }
+
+  function irAMes(m) {
+    if (tocado) guardarBorrador();
+    $('copiaTexto').hidden = true;
+    msg('');
+    cargarMes(m);
+  }
+
+  // ---- Borrador (por si el teléfono cierra la app a mitad de camino) ----
+  function leerBorrador() {
+    try { const s = localStorage.getItem(CLAVE_BORRADOR); return s ? JSON.parse(s) : null; } catch { return null; }
+  }
+  function guardarBorrador() {
+    try { localStorage.setItem(CLAVE_BORRADOR, JSON.stringify({ mes: mesActual, valores: leer(), ejemplo: esEjemplo })); } catch {}
+  }
+  function borrarBorrador() {
+    clearTimeout(tBorrador);
+    try { localStorage.removeItem(CLAVE_BORRADOR); } catch {}
+  }
+
+  // ---- Historial ----
+  function renderHistorial() {
+    const ul = $('hist'), vacio = $('histVacio');
+    const meses = [...guardados.keys()].sort().reverse();
+    if (!almacenOk || !meses.length) {
+      vacio.textContent = !almacenOk
+        ? 'Este navegador no deja guardar datos (¿modo privado?). Igual puedes calcular y copiar el resumen.'
+        : 'Todavía no hay meses guardados. Cuando termines una boleta toca Guardar mes: aparecerá aquí, y el mes siguiente partirá con estas lecturas actuales como lecturas anteriores.';
+      vacio.hidden = false;
+      ul.replaceChildren();
+      return;
+    }
+    vacio.hidden = true;
+    ul.replaceChildren(...meses.map(m => {
+      const d = guardados.get(m) || {}, res = d.resultado || {};
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'hist-item';
+      if (m === mesActual) b.setAttribute('aria-current', 'true');
+      const nom = document.createElement('span'); nom.className = 'hist-mes'; nom.textContent = nombreMes(m);
+      const tot = document.createElement('span'); tot.className = 'hist-total'; tot.textContent = isNum(d.suma) ? pesos(d.suma) : '—';
+      const casas = document.createElement('span'); casas.className = 'hist-casas';
+      for (const [k, n, col] of [['alejandra', 'Alejandra', '--ale'], ['jomy', 'Jomy', '--jomy'], ['ani', 'Ani', '--ani']]) {
+        const x = res[k] || {};
+        const s = document.createElement('span');
+        s.style.setProperty('--c', `var(${col})`);
+        const dot = document.createElement('i'); dot.className = 'dot';
+        s.append(dot, `${n} ${isNum(x.monto) ? pesos(x.monto) : '—'}`);
+        casas.append(s);
+      }
+      b.append(nom, tot, casas);
+      b.addEventListener('click', () => {
+        irAMes(m);
+        const suave = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: suave ? 'smooth' : 'auto' });
+      });
+      li.append(b);
+      return li;
+    }));
+  }
+
+  // ---- Guardar, borrar, copiar ----
+  function guardar() {
+    const { v, r } = ultimo;
+    if (!r.casas) return;
+    const mes = mesActual, c = r.casas;
+    const cuerpo = {
+      mes,
+      kwhTotal: v.kwhTotal, electricidad: v.electricidad, totalBoleta: v.totalBoleta,
+      precioKwh: r.precio, otrosGastos: r.otros,
+      lecturas: {
+        alejandra: { anterior: v.aleAnt, actual: v.aleAct },
+        jomy: { anterior: v.jomyAnt, actual: v.jomyAct }
+      },
+      resultado: {
+        alejandra: { kwh: c.alejandra.kwh, monto: c.alejandra.monto },
+        jomy: { kwh: c.jomy.kwh, monto: c.jomy.monto },
+        ani: { kwh: c.ani.kwh, monto: c.ani.monto }
+      },
+      suma: r.suma,
+      actualizado: new Date().toISOString()
+    };
+    const antes = guardados.get(mes);
+    guardados.set(mes, cuerpo);
+    try {
+      escribirMeses();
+    } catch {
+      if (antes) guardados.set(mes, antes); else guardados.delete(mes);
+      msg('No se pudo guardar en este teléfono. Revisa que no estés en modo privado.', 'err');
+      renderEstado();
+      return;
+    }
+    borrarBorrador();
+    tocado = false; esEjemplo = false; modo = 'guardado';
+    msg(`${nombreMes(mes)} quedó guardado.`, 'ok');
+    renderEstado();
+    renderHistorial();
+  }
+
+  let confirmarHasta = 0;
+  function borrar() {
+    const btn = $('borrar');
+    if (Date.now() > confirmarHasta) {
+      confirmarHasta = Date.now() + 5000;
+      btn.textContent = `Toca de nuevo para borrar ${nombreMes(mesActual).toLowerCase()}`;
+      setTimeout(() => { if (Date.now() >= confirmarHasta) btn.textContent = 'Borrar este mes'; }, 5100);
+      return;
+    }
+    confirmarHasta = 0;
+    btn.textContent = 'Borrar este mes';
+    const mes = mesActual, antes = guardados.get(mes);
+    guardados.delete(mes);
+    try {
+      escribirMeses();
+    } catch {
+      guardados.set(mes, antes);
+      msg('No se pudo borrar. Intenta de nuevo.', 'err');
+      return;
+    }
+    modo = 'sinGuardar'; tocado = true; guardarBorrador();
+    msg(`${nombreMes(mes)} se borró del historial. Los datos siguen en pantalla por si quieres guardarlos de nuevo.`, 'ok');
+    renderEstado();
+    renderHistorial();
+  }
+
+  function textoResumen() {
+    const { v, r } = ultimo;
+    if (!r.casas) return null;
+    const c = r.casas;
+    return [
+      `Luz ${nombreMes(mesActual).toLowerCase()}`,
+      `Boleta: ${kwh(v.kwhTotal)} kWh, total ${pesos(v.totalBoleta)}`,
+      `Electricidad consumida ${pesos(v.electricidad)} (${precio(r.precio)} por kWh) y otros gastos ${pesos(r.otros)}`,
+      '',
+      `Alejandra: ${kwh(c.alejandra.kwh)} kWh → ${pesos(c.alejandra.monto)}`,
+      `Jomy: ${kwh(c.jomy.kwh)} kWh → ${pesos(c.jomy.monto)}`,
+      `Ani: ${kwh(c.ani.kwh)} kWh → ${pesos(c.ani.monto)}`,
+      '',
+      `Total: ${pesos(r.suma)}`,
+      `Cada casa incluye ${pesos(r.otros / 3)} de otros gastos.`
+    ].join('\n');
+  }
+
+  async function copiar() {
+    const texto = textoResumen();
+    if (!texto) return;
+    const ta = $('copiaTexto');
+    ta.value = texto;
+    try {
+      await navigator.clipboard.writeText(texto);
+      ta.hidden = true;
+      msg('Resumen copiado. Pégalo en WhatsApp.', 'ok');
+    } catch {
+      ta.hidden = false;
+      ta.focus();
+      ta.select();
+      msg('No se pudo copiar automáticamente. El resumen quedó seleccionado aquí abajo para copiarlo a mano.');
+    }
+  }
+
+  // ---- Respaldo ----
+  async function exportar() {
+    const datos = { app: 'reparto-luz', version: 1, exportado: new Date().toISOString(), meses: Object.fromEntries(guardados) };
+    const nombre = `respaldo-luz-${new Date().toISOString().slice(0, 10)}.json`;
+    const archivo = new File([JSON.stringify(datos, null, 2)], nombre, { type: 'application/json' });
+    try {
+      if (navigator.canShare && navigator.canShare({ files: [archivo] })) {
+        await navigator.share({ files: [archivo], title: 'Respaldo Reparto de la Luz' });
+        msgRespaldo('Respaldo listo.', 'ok');
+        return;
+      }
+    } catch (e) {
+      if (e && e.name === 'AbortError') return;
+    }
+    const url = URL.createObjectURL(archivo);
+    const a = document.createElement('a');
+    a.href = url; a.download = nombre;
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    msgRespaldo(`Respaldo descargado: ${nombre}`, 'ok');
+  }
+
+  async function importar(archivo) {
+    let n = 0;
+    try {
+      const datos = JSON.parse(await archivo.text());
+      const meses = datos && typeof datos.meses === 'object' && datos.meses ? datos.meses : null;
+      if (!meses) throw new Error('formato');
+      const nuevo = new Map(guardados);
+      for (const [k, d] of Object.entries(meses)) {
+        if (/^\d{4}-\d{2}$/.test(k) && d && typeof d === 'object') { nuevo.set(k, d); n++; }
+      }
+      if (!n) throw new Error('vacío');
+      const antes = guardados;
+      guardados = nuevo;
+      try { escribirMeses(); } catch (e) { guardados = antes; throw e; }
+    } catch {
+      msgRespaldo('Ese archivo no es un respaldo de esta app.', 'err');
+      return;
+    }
+    msgRespaldo(`Se ${n === 1 ? 'cargó 1 mes' : `cargaron ${n} meses`} del respaldo.`, 'ok');
+    if (!tocado) cargarMes(mesActual);
+    else { renderEstado(); renderHistorial(); }
+  }
+
+  // ---- Eventos ----
+  for (const id of CAMPOS) {
+    const inp = $(id);
+    inp.addEventListener('input', () => {
+      tocado = true;
+      modo = 'sinGuardar';
+      clearTimeout(tBorrador);
+      tBorrador = setTimeout(guardarBorrador, 400);
+      if ($('msg').dataset.tono !== 'err') msg('');
+      render();
+    });
+    // Al salir del campo, se reescribe el número en formato chileno para que se vea cómo se entendió.
+    inp.addEventListener('change', () => {
+      const n = PARSER[id](inp.value);
+      if (isNum(n)) inp.value = FORMATO[id](n);
+      if (tocado) guardarBorrador();
+      render();
+    });
+  }
+  $('mesPrev').addEventListener('click', () => irAMes(moverMes(mesActual, -1)));
+  $('mesNext').addEventListener('click', () => irAMes(moverMes(mesActual, 1)));
+  $('limpiarEjemplo').addEventListener('click', () => {
+    borrarBorrador();
+    esEjemplo = false;
+    llenar({});
+    tocado = false;
+    modo = 'nuevo';
+    msg('');
+    render();
+    $('kwhTotal').focus();
+  });
+  $('guardar').addEventListener('click', guardar);
+  $('copiar').addEventListener('click', copiar);
+  $('borrar').addEventListener('click', borrar);
+  $('descartar').addEventListener('click', () => { borrarBorrador(); msg(''); cargarMes(mesActual); });
+  $('exportar').addEventListener('click', exportar);
+  $('importarBtn').addEventListener('click', () => $('importar').click());
+  $('importar').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if (f) importar(f);
+  });
+
+  // ---- Arranque ----
+  try { localStorage.setItem('repartoLuz.prueba', '1'); localStorage.removeItem('repartoLuz.prueba'); } catch { almacenOk = false; }
+  guardados = leerMeses();
+  cargarMes(mesActual);
+
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
